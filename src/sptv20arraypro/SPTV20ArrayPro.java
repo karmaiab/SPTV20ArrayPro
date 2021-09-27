@@ -51,6 +51,31 @@ public class SPTV20ArrayPro {
         System.out.println("nums2 = "+Arrays.toString(nums2));
         nums = nums2;
         System.out.println("nums = "+Arrays.toString(nums));
+        
+        System.out.println("Многомерные массивы");
+        int [][] matrix = new int[5][5];
+        for(int i = 0; i < matrix.length; i++){
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j] = i*j;
+            }
+        }
+        int[] sumCols = new int [5];
+        for(int i = 0; i < matrix.length; i++){
+            int sum = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.printf("%3d",matrix[i][j] = i*j);
+                sum += matrix[i][j];
+                sumCols[j] += matrix[i][j];
+            }
+            System.out.println("| the sum is: " +sum);
+        }
+        System.out.println("   --The sum of the Colums--");
+        for (int i = 0; i < sumCols.length; i++) {
+            System.out.printf("%3d",sumCols[i]);
+        }
+        System.out.println();
+        
     }
+    
     
 }
