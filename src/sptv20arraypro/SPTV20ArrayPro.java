@@ -6,6 +6,7 @@
 package sptv20arraypro;
 
 import java.util.Arrays;
+import java.util.Random;
 
 
 
@@ -74,7 +75,31 @@ public class SPTV20ArrayPro {
             System.out.printf("%3d",sumCols[i]);
         }
         System.out.println();
-        
+        System.out.println("Зубчиатые массивы");
+        int[][] matrixZ = new int[5][];
+        matrixZ[0] = new int[1];
+        matrixZ[1] = new int[6];
+        matrixZ[2] = new int[3];
+        matrixZ[3] = new int[4];
+        matrixZ[4] = new int[5];
+        Random random = new Random();
+        int min = 0, max = 9;
+        int[] sumColsZ = new int[max];
+        for (int i = 0; i < matrixZ.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < matrixZ[i].length; j++) {
+                matrixZ[i][j] = random.nextInt(max - min + 1);
+                System.out.printf("%3d,", matrixZ[i][j]);
+                sum += matrixZ[i][j];
+                sumColsZ[j] += matrixZ[i][j];
+            }
+            System.out.println("| the sum: " +sum);
+        }
+        System.out.println("  Sum of colums");
+        for (int i = 0; i < sumColsZ.length; i++) {
+            System.out.printf("%3d,", sumColsZ[i]);
+        }
+        System.out.println();
     }
     
     
